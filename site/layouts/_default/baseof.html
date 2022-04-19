@@ -5,10 +5,10 @@
 
     {{ block "main" . }}{{ end }}
 
+    {{ block "header" . }}{{ partial "nav" . }}{{end}}
+
     {{ block "footer" . }}{{ partial "footer" . }}{{end}}
 
-    {{ block "header" . }}{{ partial "nav" . }}{{end}}
-    
     {{ $script := .Site.Data.webpack.main }}
     {{ with $script.js }}
       <script src="{{ relURL . }}"></script>
